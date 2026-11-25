@@ -30,10 +30,3 @@ jobs:
 
       - name: Build tools
         run: go build -o ./bin/tools ./examples/...
-
-      - name: Upload tools
-        if: ${{ startsWith(matrix.go_version, '^') }}
-        uses: actions/upload-artifact@v3
-        with:
-          name: tools
-          path: ./bin/tools
